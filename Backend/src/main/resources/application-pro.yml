@@ -1,0 +1,25 @@
+spring:
+  thymeleaf:
+    mode: HTMl
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vueblog?userUnicode=true&characterEncoding=utf-8&serverTimezone=Europe/Zurich
+    username: root
+    password: hcf991025
+
+mybatis:
+  type-aliases-package: pri.chaofan.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+#配置日志级别
+logging:
+  level:
+    root: info
+    pri.chaofan: debug
+  file:
+    name: log/blog-pro.log
+
+serve:
+  port: 8082

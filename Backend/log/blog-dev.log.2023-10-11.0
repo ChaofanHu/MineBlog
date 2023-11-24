@@ -1,0 +1,32 @@
+2023-10-11T23:44:23.295+02:00  INFO 56762 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 56762 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-11T23:44:23.301+02:00 DEBUG 56762 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-11T23:44:23.303+02:00  INFO 56762 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-11T23:44:23.375+02:00  INFO 56762 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-11T23:44:23.376+02:00  INFO 56762 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-11T23:44:25.327+02:00  INFO 56762 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-11T23:44:25.335+02:00  INFO 56762 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-11T23:44:25.336+02:00  INFO 56762 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-11T23:44:25.383+02:00  INFO 56762 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-11T23:44:25.384+02:00  INFO 56762 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2008 ms
+2023-10-11T23:44:26.430+02:00  INFO 56762 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-11T23:44:26.839+02:00  INFO 56762 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-11T23:44:26.882+02:00  INFO 56762 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-11T23:44:26.897+02:00  INFO 56762 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.466 seconds (process running for 5.311)
+2023-10-11T23:48:40.071+02:00  INFO 56762 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-11T23:48:40.074+02:00  INFO 56762 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-11T23:48:40.077+02:00  INFO 56762 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-11T23:48:40.146+02:00  INFO 56762 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/getAllBlogs', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.getAllBLogs', args=[]}
+2023-10-11T23:48:40.166+02:00  INFO 56762 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-11T23:48:40.635+02:00  INFO 56762 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c353145
+2023-10-11T23:48:40.637+02:00  INFO 56762 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-11T23:48:40.648+02:00 DEBUG 56762 --- [http-nio-8090-exec-1] p.c.mineblog.dao.BlogMapper.selectAll    : ==>  Preparing: select * from tb_blogs;
+2023-10-11T23:48:40.675+02:00 DEBUG 56762 --- [http-nio-8090-exec-1] p.c.mineblog.dao.BlogMapper.selectAll    : ==> Parameters: 
+2023-10-11T23:48:40.713+02:00 DEBUG 56762 --- [http-nio-8090-exec-1] p.c.mineblog.dao.BlogMapper.selectAll    : <==      Total: 1
+2023-10-11T23:48:40.719+02:00  INFO 56762 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : [Blog(id=1, title=Debugs, introduction=This is a blog for some bugs I encountered when I develop my website., content=12313123, firstPicture=https://devblogs.microsoft.com/visualstudio/wp-content/uploads/sites/4/2019/12/devblog-debug.png, flag=Debug, views=126, createTime=2023-10-03, updateTime=2023-10-03, typeId=4, userId=1, commentCount=0)]
+2023-10-11T23:48:40.728+02:00  INFO 56762 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-11T23:48:54.144+02:00  INFO 56762 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/getAllBlogs', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.getAllBLogs', args=[]}
+2023-10-11T23:48:54.148+02:00 DEBUG 56762 --- [http-nio-8090-exec-2] p.c.mineblog.dao.BlogMapper.selectAll    : ==>  Preparing: select * from tb_blogs;
+2023-10-11T23:48:54.149+02:00 DEBUG 56762 --- [http-nio-8090-exec-2] p.c.mineblog.dao.BlogMapper.selectAll    : ==> Parameters: 
+2023-10-11T23:48:54.156+02:00 DEBUG 56762 --- [http-nio-8090-exec-2] p.c.mineblog.dao.BlogMapper.selectAll    : <==      Total: 1
+2023-10-11T23:48:54.165+02:00  INFO 56762 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : [Blog(id=1, title=Debugs, introduction=This is a blog for some bugs I encountered when I develop my website., content=12313123, firstPicture=https://devblogs.microsoft.com/visualstudio/wp-content/uploads/sites/4/2019/12/devblog-debug.png, flag=Debug, views=126, createTime=2023-10-03, updateTime=2023-10-03, typeId=4, userId=1, commentCount=0)]
+2023-10-11T23:48:54.165+02:00  INFO 56762 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------

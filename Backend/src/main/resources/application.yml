@@ -1,0 +1,9 @@
+#spring:
+#  thymeleaf:
+#    mode: HTMl
+#  profiles:
+#    active: dev
+
+spring:
+  profiles:
+    active: dev

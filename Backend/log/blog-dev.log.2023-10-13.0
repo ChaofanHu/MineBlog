@@ -1,0 +1,1471 @@
+2023-10-13T11:55:26.691+02:00  INFO 59948 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 59948 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T11:55:26.696+02:00 DEBUG 59948 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T11:55:26.698+02:00  INFO 59948 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T11:55:26.771+02:00  INFO 59948 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T11:55:26.772+02:00  INFO 59948 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T11:55:28.562+02:00  INFO 59948 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T11:55:28.571+02:00  INFO 59948 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T11:55:28.572+02:00  INFO 59948 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T11:55:28.618+02:00  INFO 59948 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T11:55:28.619+02:00  INFO 59948 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1847 ms
+2023-10-13T11:55:28.900+02:00  WARN 59948 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'blogManageController': Unsatisfied dependency expressed through field 'blogService': Error creating bean with name 'blogServiceImpl': Unsatisfied dependency expressed through field 'blogMapper': Error creating bean with name 'blogMapper' defined in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/pri/chaofan/mineblog/dao/BlogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+2023-10-13T11:55:28.906+02:00  INFO 59948 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-13T11:55:28.927+02:00  INFO 59948 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-10-13T11:55:28.948+02:00 ERROR 59948 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'blogManageController': Unsatisfied dependency expressed through field 'blogService': Error creating bean with name 'blogServiceImpl': Unsatisfied dependency expressed through field 'blogMapper': Error creating bean with name 'blogMapper' defined in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/pri/chaofan/mineblog/dao/BlogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:716)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:696)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at pri.chaofan.mineblog.MineblogApplication.main(MineblogApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'blogServiceImpl': Unsatisfied dependency expressed through field 'blogMapper': Error creating bean with name 'blogMapper' defined in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/pri/chaofan/mineblog/dao/BlogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:716)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:696)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'blogMapper' defined in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/pri/chaofan/mineblog/dao/BlogMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory': Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1407)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	... 39 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1498)
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 63 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:700)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:577)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:720)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 64 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for pri.chaofan.mineblog.dao.BlogMapper.blogResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:100)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:698)
+	... 72 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for pri.chaofan.mineblog.dao.BlogMapper.blogResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:1071)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:1024)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:780)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:181)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:48)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:296)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:262)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:124)
+	... 74 common frames omitted
+
+2023-10-13T11:56:45.606+02:00  INFO 59967 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 59967 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T11:56:45.611+02:00 DEBUG 59967 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T11:56:45.614+02:00  INFO 59967 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T11:56:45.701+02:00  INFO 59967 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T11:56:45.701+02:00  INFO 59967 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T11:56:47.538+02:00  INFO 59967 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T11:56:47.546+02:00  INFO 59967 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T11:56:47.547+02:00  INFO 59967 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T11:56:47.593+02:00  INFO 59967 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T11:56:47.594+02:00  INFO 59967 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1893 ms
+2023-10-13T11:56:48.648+02:00  INFO 59967 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T11:56:49.011+02:00  INFO 59967 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T11:56:49.047+02:00  INFO 59967 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T11:56:49.058+02:00  INFO 59967 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.197 seconds (process running for 4.983)
+2023-10-13T11:57:19.524+02:00  INFO 59967 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T11:57:19.526+02:00  INFO 59967 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T11:57:19.529+02:00  INFO 59967 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-13T11:57:19.577+02:00  INFO 59967 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T11:57:19.593+02:00  INFO 59967 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T11:57:20.014+02:00  INFO 59967 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@669bf302
+2023-10-13T11:57:20.016+02:00  INFO 59967 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T11:57:20.028+02:00 DEBUG 59967 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select id,title,create_time,update_time,name from tb_users left join tb_blogs on tb_users.type_id = tb_categories.id；
+2023-10-13T11:57:20.060+02:00 DEBUG 59967 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T11:57:20.195+02:00  INFO 59967 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T11:57:20.197+02:00 ERROR 59967 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@76deff6a, Exception: {}
+
+org.springframework.dao.DataIntegrityViolationException: 
+### Error querying database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'id' in field list is ambiguous
+### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select id,title,create_time,update_time,name from tb_users left join tb_blogs on tb_users.type_id = tb_categories.id；
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'id' in field list is ambiguous
+; Column 'id' in field list is ambiguous
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:95)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy73.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:24)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'id' in field list is ambiguous
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy84.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+
+2023-10-13T11:57:20.207+02:00  WARN 59967 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: <EOL>### Error querying database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'id' in field list is ambiguous<EOL>### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]<EOL>### The error may involve defaultParameterMap<EOL>### The error occurred while setting parameters<EOL>### SQL: select id,title,create_time,update_time,name from tb_users left join tb_blogs on tb_users.type_id = tb_categories.id；<EOL>### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'id' in field list is ambiguous<EOL>; Column 'id' in field list is ambiguous]
+2023-10-13T11:58:05.349+02:00  INFO 59967 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T11:58:05.363+02:00  INFO 59967 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T11:58:09.764+02:00  INFO 60054 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60054 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T11:58:09.766+02:00 DEBUG 60054 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T11:58:09.767+02:00  INFO 60054 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T11:58:09.833+02:00  INFO 60054 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T11:58:09.833+02:00  INFO 60054 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T11:58:11.610+02:00  INFO 60054 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T11:58:11.617+02:00  INFO 60054 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T11:58:11.618+02:00  INFO 60054 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T11:58:11.663+02:00  INFO 60054 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T11:58:11.664+02:00  INFO 60054 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1830 ms
+2023-10-13T11:58:12.573+02:00  INFO 60054 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T11:58:12.899+02:00  INFO 60054 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T11:58:12.938+02:00  INFO 60054 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T11:58:12.949+02:00  INFO 60054 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 3.899 seconds (process running for 4.661)
+2023-10-13T11:58:16.730+02:00  INFO 60054 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T11:58:16.733+02:00  INFO 60054 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T11:58:16.735+02:00  INFO 60054 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T11:58:16.783+02:00  INFO 60054 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T11:58:16.804+02:00  INFO 60054 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T11:58:17.132+02:00  INFO 60054 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58543e06
+2023-10-13T11:58:17.135+02:00  INFO 60054 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T11:58:17.144+02:00 DEBUG 60054 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_users.id,title,create_time,update_time,name from tb_users left join tb_blogs on tb_users.type_id = tb_categories.id；
+2023-10-13T11:58:17.170+02:00 DEBUG 60054 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T11:58:17.256+02:00  INFO 60054 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T11:58:17.259+02:00 ERROR 60054 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@4a599223, Exception: {}
+
+org.springframework.dao.DataIntegrityViolationException: 
+### Error querying database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_time' in field list is ambiguous
+### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select tb_users.id,title,create_time,update_time,name from tb_users left join tb_blogs on tb_users.type_id = tb_categories.id；
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_time' in field list is ambiguous
+; Column 'create_time' in field list is ambiguous
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:95)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:79)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy73.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:24)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'create_time' in field list is ambiguous
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy84.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+
+2023-10-13T11:58:17.268+02:00  WARN 60054 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: <EOL>### Error querying database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_time' in field list is ambiguous<EOL>### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]<EOL>### The error may involve defaultParameterMap<EOL>### The error occurred while setting parameters<EOL>### SQL: select tb_users.id,title,create_time,update_time,name from tb_users left join tb_blogs on tb_users.type_id = tb_categories.id；<EOL>### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_time' in field list is ambiguous<EOL>; Column 'create_time' in field list is ambiguous]
+2023-10-13T11:59:09.537+02:00  INFO 60054 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T11:59:09.558+02:00  INFO 60054 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T11:59:14.101+02:00  INFO 60067 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60067 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T11:59:14.103+02:00 DEBUG 60067 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T11:59:14.104+02:00  INFO 60067 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T11:59:14.177+02:00  INFO 60067 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T11:59:14.177+02:00  INFO 60067 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T11:59:15.988+02:00  INFO 60067 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T11:59:15.998+02:00  INFO 60067 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T11:59:15.999+02:00  INFO 60067 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T11:59:16.055+02:00  INFO 60067 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T11:59:16.056+02:00  INFO 60067 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1877 ms
+2023-10-13T11:59:17.084+02:00  INFO 60067 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T11:59:17.458+02:00  INFO 60067 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T11:59:17.495+02:00  INFO 60067 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T11:59:17.506+02:00  INFO 60067 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.163 seconds (process running for 4.962)
+2023-10-13T11:59:24.901+02:00  INFO 60067 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T11:59:24.907+02:00  INFO 60067 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T11:59:24.911+02:00  INFO 60067 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-10-13T11:59:24.961+02:00  INFO 60067 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T11:59:24.980+02:00  INFO 60067 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T11:59:25.323+02:00  INFO 60067 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@519d937c
+2023-10-13T11:59:25.325+02:00  INFO 60067 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T11:59:25.342+02:00 DEBUG 60067 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_users.id,title,create_time,update_time,name from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id；
+2023-10-13T11:59:25.367+02:00 DEBUG 60067 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T11:59:25.470+02:00  INFO 60067 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T11:59:25.473+02:00 ERROR 60067 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@26c1213d, Exception: {}
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.id' in 'field list'
+### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select tb_users.id,title,create_time,update_time,name from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id；
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.id' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:243)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy73.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:24)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy84.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+
+2023-10-13T11:59:25.483+02:00  WARN 60067 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: <EOL>### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.id' in 'field list'<EOL>### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]<EOL>### The error may involve defaultParameterMap<EOL>### The error occurred while setting parameters<EOL>### SQL: select tb_users.id,title,create_time,update_time,name from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id；<EOL>### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.id' in 'field list'<EOL>; bad SQL grammar []]
+2023-10-13T11:59:56.676+02:00  INFO 60067 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T11:59:56.690+02:00  INFO 60067 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:00:00.470+02:00  INFO 60078 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60078 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:00:00.472+02:00 DEBUG 60078 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:00:00.473+02:00  INFO 60078 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:00:00.541+02:00  INFO 60078 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:00:00.541+02:00  INFO 60078 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:00:02.587+02:00  INFO 60078 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:00:02.596+02:00  INFO 60078 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:00:02.597+02:00  INFO 60078 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:00:02.645+02:00  INFO 60078 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:00:02.646+02:00  INFO 60078 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2103 ms
+2023-10-13T12:00:03.631+02:00  INFO 60078 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:00:04.005+02:00  INFO 60078 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:00:04.042+02:00  INFO 60078 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:00:04.053+02:00  INFO 60078 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.354 seconds (process running for 5.085)
+2023-10-13T12:00:08.250+02:00  INFO 60078 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:00:08.251+02:00  INFO 60078 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:00:08.253+02:00  INFO 60078 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-13T12:00:08.299+02:00  INFO 60078 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:00:08.314+02:00  INFO 60078 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:00:08.659+02:00  INFO 60078 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a07a830
+2023-10-13T12:00:08.662+02:00  INFO 60078 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:00:08.672+02:00 DEBUG 60078 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id;
+2023-10-13T12:00:08.707+02:00 DEBUG 60078 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T12:00:08.834+02:00  INFO 60078 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:00:08.836+02:00 ERROR 60078 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@15dc333, Exception: {}
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'name' in 'field list'
+### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select tb_blogs.id,title,create_time,update_time,name from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id;
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'name' in 'field list'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:243)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy73.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:24)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'name' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy84.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+
+2023-10-13T12:00:08.843+02:00  WARN 60078 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: <EOL>### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'name' in 'field list'<EOL>### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]<EOL>### The error may involve defaultParameterMap<EOL>### The error occurred while setting parameters<EOL>### SQL: select tb_blogs.id,title,create_time,update_time,name from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id;<EOL>### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'name' in 'field list'<EOL>; bad SQL grammar []]
+2023-10-13T12:01:42.038+02:00  INFO 60078 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:01:42.055+02:00  INFO 60078 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:01:48.624+02:00  INFO 60096 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60096 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:01:48.625+02:00 DEBUG 60096 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:01:48.627+02:00  INFO 60096 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:01:48.698+02:00  INFO 60096 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:01:48.698+02:00  INFO 60096 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:01:50.496+02:00  INFO 60096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:01:50.504+02:00  INFO 60096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:01:50.505+02:00  INFO 60096 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:01:50.551+02:00  INFO 60096 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:01:50.552+02:00  INFO 60096 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1853 ms
+2023-10-13T12:01:51.545+02:00  INFO 60096 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:01:51.943+02:00  INFO 60096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:01:51.980+02:00  INFO 60096 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:01:51.992+02:00  INFO 60096 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.113 seconds (process running for 4.818)
+2023-10-13T12:01:55.057+02:00  INFO 60096 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:01:55.058+02:00  INFO 60096 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:01:55.060+02:00  INFO 60096 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T12:01:55.108+02:00  INFO 60096 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:01:55.123+02:00  INFO 60096 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:01:55.451+02:00  INFO 60096 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@669f3ce8
+2023-10-13T12:01:55.454+02:00  INFO 60096 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:01:55.463+02:00 DEBUG 60096 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id;
+2023-10-13T12:01:55.501+02:00 DEBUG 60096 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T12:01:55.617+02:00  INFO 60096 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:01:55.620+02:00 ERROR 60096 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@4af12c2, Exception: {}
+
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.type_id' in 'on clause'
+### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id;
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.type_id' in 'on clause'
+; bad SQL grammar []
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:243)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy73.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:24)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.type_id' in 'on clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy4/jdk.proxy4.$Proxy84.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+
+2023-10-13T12:01:55.628+02:00  WARN 60096 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: <EOL>### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.type_id' in 'on clause'<EOL>### The error may exist in file [/Users/chaofanhu/IdeaProjects/mineblog/target/classes/mapper/BlogMapper.xml]<EOL>### The error may involve defaultParameterMap<EOL>### The error occurred while setting parameters<EOL>### SQL: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_users.type_id = tb_categories.id;<EOL>### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'tb_users.type_id' in 'on clause'<EOL>; bad SQL grammar []]
+2023-10-13T12:02:27.055+02:00  INFO 60096 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:02:27.070+02:00  INFO 60096 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:02:31.735+02:00  INFO 60105 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60105 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:02:31.737+02:00 DEBUG 60105 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:02:31.739+02:00  INFO 60105 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:02:31.796+02:00  INFO 60105 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:02:31.796+02:00  INFO 60105 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:02:33.482+02:00  INFO 60105 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:02:33.492+02:00  INFO 60105 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:02:33.493+02:00  INFO 60105 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:02:33.537+02:00  INFO 60105 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:02:33.537+02:00  INFO 60105 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1740 ms
+2023-10-13T12:02:34.471+02:00  INFO 60105 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:02:34.817+02:00  INFO 60105 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:02:34.853+02:00  INFO 60105 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:02:34.867+02:00  INFO 60105 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 3.831 seconds (process running for 4.556)
+2023-10-13T12:02:39.704+02:00  INFO 60105 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:02:39.708+02:00  INFO 60105 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:02:39.710+02:00  INFO 60105 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T12:02:39.759+02:00  INFO 60105 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:02:39.774+02:00  INFO 60105 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:02:40.112+02:00  INFO 60105 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@853b6f8
+2023-10-13T12:02:40.114+02:00  INFO 60105 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:02:40.123+02:00 DEBUG 60105 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:02:40.149+02:00 DEBUG 60105 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T12:02:40.191+02:00 DEBUG 60105 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : <==      Total: 1
+2023-10-13T12:02:40.196+02:00  INFO 60105 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : [Blog(id=1, title=Debugs, introduction=null, content=null, firstPicture=null, flag=null, views=0, createTime=2023-10-03, updateTime=2023-10-03, typeId=0, userId=0, commentCount=0)]
+2023-10-13T12:02:40.202+02:00  INFO 60105 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:04:21.532+02:00  INFO 60105 --- [http-nio-8090-exec-3] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:04:21.542+02:00 DEBUG 60105 --- [http-nio-8090-exec-3] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:04:21.543+02:00 DEBUG 60105 --- [http-nio-8090-exec-3] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T12:04:21.560+02:00 DEBUG 60105 --- [http-nio-8090-exec-3] p.c.m.dao.BlogMapper.selectAllForManage  : <==      Total: 1
+2023-10-13T12:04:21.562+02:00  INFO 60105 --- [http-nio-8090-exec-3] pri.chaofan.mineblog.aspect.LogAspect    : Result : [Blog(id=1, title=Debugs, introduction=null, content=null, firstPicture=null, flag=null, views=0, createTime=2023-10-03, updateTime=2023-10-03, typeId=0, userId=0, commentCount=0)]
+2023-10-13T12:04:21.563+02:00  INFO 60105 --- [http-nio-8090-exec-3] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:04:25.840+02:00  INFO 60105 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:04:25.854+02:00  INFO 60105 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:04:31.554+02:00  INFO 60120 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60120 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:04:31.556+02:00 DEBUG 60120 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:04:31.558+02:00  INFO 60120 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:04:31.623+02:00  INFO 60120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:04:31.624+02:00  INFO 60120 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:04:33.365+02:00  INFO 60120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:04:33.373+02:00  INFO 60120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:04:33.374+02:00  INFO 60120 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:04:33.419+02:00  INFO 60120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:04:33.420+02:00  INFO 60120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1796 ms
+2023-10-13T12:04:34.607+02:00  INFO 60120 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:04:35.062+02:00  INFO 60120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:04:35.107+02:00  INFO 60120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:04:35.123+02:00  INFO 60120 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.358 seconds (process running for 5.059)
+2023-10-13T12:04:41.082+02:00  INFO 60120 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:04:41.083+02:00  INFO 60120 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:04:41.085+02:00  INFO 60120 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T12:04:41.130+02:00  INFO 60120 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:04:41.144+02:00  INFO 60120 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:04:41.446+02:00  INFO 60120 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58543e06
+2023-10-13T12:04:41.448+02:00  INFO 60120 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:04:41.455+02:00 DEBUG 60120 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:04:41.477+02:00 DEBUG 60120 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : ==> Parameters: 
+2023-10-13T12:04:41.496+02:00 DEBUG 60120 --- [http-nio-8090-exec-1] p.c.m.dao.BlogMapper.selectAllForManage  : <==      Total: 1
+2023-10-13T12:04:41.507+02:00  INFO 60120 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : [Blog(id=1, title=Debugs, introduction=null, content=null, firstPicture=null, flag=null, views=0, createTime=2023-10-03, updateTime=2023-10-03, typeId=0, userId=0, commentCount=0)]
+2023-10-13T12:04:41.507+02:00  INFO 60120 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:05:45.585+02:00  INFO 60120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:05:45.608+02:00  INFO 60120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:11:07.992+02:00  INFO 60198 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60198 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:11:07.994+02:00 DEBUG 60198 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:11:07.996+02:00  INFO 60198 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:11:08.070+02:00  INFO 60198 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:11:08.070+02:00  INFO 60198 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:11:09.892+02:00  INFO 60198 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:11:09.903+02:00  INFO 60198 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:11:09.903+02:00  INFO 60198 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:11:09.948+02:00  INFO 60198 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:11:09.949+02:00  INFO 60198 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1878 ms
+2023-10-13T12:11:10.927+02:00  INFO 60198 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:11:11.296+02:00  INFO 60198 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:11:11.335+02:00  INFO 60198 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:11:11.347+02:00  INFO 60198 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.105 seconds (process running for 4.815)
+2023-10-13T12:11:15.069+02:00  INFO 60198 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:11:15.072+02:00  INFO 60198 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:11:15.080+02:00  INFO 60198 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-10-13T12:11:15.158+02:00  INFO 60198 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:11:15.167+02:00  INFO 60198 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:11:15.170+02:00 ERROR 60198 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@3330ecc4, Exception: {}
+
+java.lang.IllegalArgumentException: Result Maps collection does not contain value for pri.chaofan.mineblog.dao.BlogManageMapper.blogResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:1097)
+	at org.apache.ibatis.session.Configuration.getResultMap(Configuration.java:794)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.getStatementResultMaps(MapperBuilderAssistant.java:321)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addMappedStatement(MapperBuilderAssistant.java:214)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:120)
+	at org.apache.ibatis.session.Configuration.lambda$buildAllStatements$2(Configuration.java:935)
+	at java.base/java.util.Collection.removeIf(Collection.java:576)
+	at org.apache.ibatis.session.Configuration.buildAllStatements(Configuration.java:934)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:912)
+	at org.apache.ibatis.session.Configuration.hasStatement(Configuration.java:907)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.resolveMappedStatement(MapperMethod.java:253)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:225)
+	at org.apache.ibatis.binding.MapperMethod.<init>(MapperMethod.java:53)
+	at org.apache.ibatis.binding.MapperProxy.lambda$cachedInvoker$0(MapperProxy.java:96)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.apache.ibatis.util.MapUtil.computeIfAbsent(MapUtil.java:36)
+	at org.apache.ibatis.binding.MapperProxy.cachedInvoker(MapperProxy.java:94)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy76.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:30)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2023-10-13T12:11:15.178+02:00  WARN 60198 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Result Maps collection does not contain value for pri.chaofan.mineblog.dao.BlogManageMapper.blogResultMap]
+2023-10-13T12:12:24.257+02:00  INFO 60229 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60229 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:12:24.261+02:00 DEBUG 60229 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:12:24.264+02:00  INFO 60229 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:12:24.333+02:00  INFO 60229 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:12:24.333+02:00  INFO 60229 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:12:26.119+02:00  INFO 60229 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:12:26.127+02:00  INFO 60229 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:12:26.128+02:00  INFO 60229 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:12:26.190+02:00  INFO 60229 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:12:26.192+02:00  INFO 60229 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1858 ms
+2023-10-13T12:12:27.173+02:00  INFO 60229 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:12:27.532+02:00  INFO 60229 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:12:27.571+02:00  INFO 60229 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:12:27.584+02:00  INFO 60229 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.172 seconds (process running for 5.043)
+2023-10-13T12:12:30.291+02:00  INFO 60229 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:12:30.292+02:00  INFO 60229 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:12:30.295+02:00  INFO 60229 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-13T12:12:30.336+02:00  INFO 60229 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:12:30.353+02:00  INFO 60229 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:12:30.675+02:00  INFO 60229 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5cd7f74d
+2023-10-13T12:12:30.677+02:00  INFO 60229 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:12:30.686+02:00 DEBUG 60229 --- [http-nio-8090-exec-1] p.c.m.d.B.selectAllForManage             : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:12:30.711+02:00 DEBUG 60229 --- [http-nio-8090-exec-1] p.c.m.d.B.selectAllForManage             : ==> Parameters: 
+2023-10-13T12:12:30.735+02:00  INFO 60229 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:12:30.737+02:00 ERROR 60229 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@64c53196, Exception: {}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy76.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:30)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property 'createTime' of 'class pri.chaofan.mineblog.pojo.BlogManage' with value '2023-10-03' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'createTime' in 'class pri.chaofan.mineblog.pojo.BlogManage'
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:184)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.set(BeanWrapper.java:58)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:139)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyPropertyMappings(DefaultResultSetHandler.java:508)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:414)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:362)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:333)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:306)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:202)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:66)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'createTime' in 'class pri.chaofan.mineblog.pojo.BlogManage'
+	at org.apache.ibatis.reflection.Reflector.getSetInvoker(Reflector.java:379)
+	at org.apache.ibatis.reflection.MetaClass.getSetInvoker(MetaClass.java:166)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:175)
+	... 104 common frames omitted
+
+2023-10-13T12:12:30.743+02:00  WARN 60229 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException]
+2023-10-13T12:14:49.143+02:00  INFO 60229 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:14:49.171+02:00  INFO 60229 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:14:55.079+02:00  INFO 60251 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60251 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:14:55.080+02:00 DEBUG 60251 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:14:55.082+02:00  INFO 60251 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:14:55.146+02:00  INFO 60251 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:14:55.146+02:00  INFO 60251 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:14:56.938+02:00  INFO 60251 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:14:56.946+02:00  INFO 60251 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:14:56.947+02:00  INFO 60251 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:14:56.999+02:00  INFO 60251 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:14:57.000+02:00  INFO 60251 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1853 ms
+2023-10-13T12:14:58.003+02:00  INFO 60251 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:14:58.383+02:00  INFO 60251 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:14:58.423+02:00  INFO 60251 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:14:58.435+02:00  INFO 60251 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.05 seconds (process running for 4.811)
+2023-10-13T12:15:03.193+02:00  INFO 60251 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:15:03.195+02:00  INFO 60251 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:15:03.197+02:00  INFO 60251 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T12:15:03.265+02:00  INFO 60251 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:15:03.284+02:00  INFO 60251 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:15:03.613+02:00  INFO 60251 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@209a3c13
+2023-10-13T12:15:03.615+02:00  INFO 60251 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:15:03.624+02:00 DEBUG 60251 --- [http-nio-8090-exec-1] p.c.m.d.B.selectAllForManage             : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:15:03.651+02:00 DEBUG 60251 --- [http-nio-8090-exec-1] p.c.m.d.B.selectAllForManage             : ==> Parameters: 
+2023-10-13T12:15:03.689+02:00  INFO 60251 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:15:03.691+02:00 ERROR 60251 --- [http-nio-8090-exec-1] p.c.m.h.ControllerExceptionHandler       : Request URl: org.apache.catalina.connector.RequestFacade@27a4c847, Exception: {}
+
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy73.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy3/jdk.proxy3.$Proxy76.selectAllForManage(Unknown Source)
+	at pri.chaofan.mineblog.service.impl.BlogServiceImpl.selectAllForManage(BlogServiceImpl.java:30)
+	at pri.chaofan.mineblog.controller.BlogManageController.blogManages(BlogManageController.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at pri.chaofan.mineblog.controller.BlogManageController$$SpringCGLIB$$0.blogManages(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property 'createTime' of 'class pri.chaofan.mineblog.pojo.BlogManage' with value '2023-10-03' Cause: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'createTime' in 'class pri.chaofan.mineblog.pojo.BlogManage'
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:184)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.set(BeanWrapper.java:58)
+	at org.apache.ibatis.reflection.MetaObject.setValue(MetaObject.java:139)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.applyPropertyMappings(DefaultResultSetHandler.java:508)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.getRowValue(DefaultResultSetHandler.java:414)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValuesForSimpleResultMap(DefaultResultSetHandler.java:362)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleRowValues(DefaultResultSetHandler.java:333)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSet(DefaultResultSetHandler.java:306)
+	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:202)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:66)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 81 common frames omitted
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no setter for property named 'createTime' in 'class pri.chaofan.mineblog.pojo.BlogManage'
+	at org.apache.ibatis.reflection.Reflector.getSetInvoker(Reflector.java:379)
+	at org.apache.ibatis.reflection.MetaClass.getSetInvoker(MetaClass.java:166)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.setBeanProperty(BeanWrapper.java:175)
+	... 104 common frames omitted
+
+2023-10-13T12:15:03.696+02:00  WARN 60251 --- [http-nio-8090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException]
+2023-10-13T12:18:36.591+02:00  INFO 60251 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:18:36.616+02:00  INFO 60251 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:18:42.578+02:00  INFO 60272 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60272 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:18:42.580+02:00 DEBUG 60272 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:18:42.581+02:00  INFO 60272 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:18:42.648+02:00  INFO 60272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:18:42.648+02:00  INFO 60272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:18:44.729+02:00  INFO 60272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:18:44.740+02:00  INFO 60272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:18:44.741+02:00  INFO 60272 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:18:44.815+02:00  INFO 60272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:18:44.817+02:00  INFO 60272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2167 ms
+2023-10-13T12:18:45.914+02:00  INFO 60272 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:18:46.437+02:00  INFO 60272 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:18:46.485+02:00  INFO 60272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:18:46.499+02:00  INFO 60272 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.753 seconds (process running for 5.575)
+2023-10-13T12:18:49.319+02:00  INFO 60272 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:18:49.320+02:00  INFO 60272 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:18:49.322+02:00  INFO 60272 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T12:18:49.364+02:00  INFO 60272 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:18:49.378+02:00  INFO 60272 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:18:49.669+02:00  INFO 60272 --- [http-nio-8090-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ab6794
+2023-10-13T12:18:49.671+02:00  INFO 60272 --- [http-nio-8090-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:18:49.679+02:00 DEBUG 60272 --- [http-nio-8090-exec-1] p.c.m.dao.BlogManageMapper.selectAll     : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:18:49.701+02:00 DEBUG 60272 --- [http-nio-8090-exec-1] p.c.m.dao.BlogManageMapper.selectAll     : ==> Parameters: 
+2023-10-13T12:18:49.721+02:00 DEBUG 60272 --- [http-nio-8090-exec-1] p.c.m.dao.BlogManageMapper.selectAll     : <==      Total: 1
+2023-10-13T12:18:49.725+02:00  INFO 60272 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : [pri.chaofan.mineblog.pojo.BlogManage@4d00ada3]
+2023-10-13T12:18:49.725+02:00  INFO 60272 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:19:16.172+02:00  INFO 60272 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T12:19:16.211+02:00 DEBUG 60272 --- [http-nio-8090-exec-2] p.c.m.dao.BlogManageMapper.selectAll     : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T12:19:16.214+02:00 DEBUG 60272 --- [http-nio-8090-exec-2] p.c.m.dao.BlogManageMapper.selectAll     : ==> Parameters: 
+2023-10-13T12:19:16.227+02:00 DEBUG 60272 --- [http-nio-8090-exec-2] p.c.m.dao.BlogManageMapper.selectAll     : <==      Total: 1
+2023-10-13T12:19:16.231+02:00  INFO 60272 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : [pri.chaofan.mineblog.pojo.BlogManage@350bc0]
+2023-10-13T12:19:16.231+02:00  INFO 60272 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:25:12.947+02:00  WARN 60272 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m53s160ms).
+2023-10-13T12:26:42.038+02:00  WARN 60272 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m29s94ms).
+2023-10-13T12:56:23.691+02:00  WARN 60272 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m11s565ms).
+2023-10-13T12:58:33.463+02:00  INFO 60272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T12:58:33.499+02:00  INFO 60272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T12:58:40.109+02:00  INFO 60446 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60446 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T12:58:40.111+02:00 DEBUG 60446 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T12:58:40.113+02:00  INFO 60446 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T12:58:40.173+02:00  INFO 60446 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T12:58:40.173+02:00  INFO 60446 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T12:58:41.892+02:00  INFO 60446 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T12:58:41.900+02:00  INFO 60446 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T12:58:41.900+02:00  INFO 60446 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T12:58:41.947+02:00  INFO 60446 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T12:58:41.948+02:00  INFO 60446 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1774 ms
+2023-10-13T12:58:42.952+02:00  INFO 60446 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T12:58:43.316+02:00  INFO 60446 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T12:58:43.354+02:00  INFO 60446 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T12:58:43.366+02:00  INFO 60446 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.097 seconds (process running for 4.957)
+2023-10-13T12:58:47.455+02:00  INFO 60446 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T12:58:47.457+02:00  INFO 60446 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T12:58:47.461+02:00  INFO 60446 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-13T12:59:26.332+02:00  INFO 60446 --- [http-nio-8090-exec-3] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.IndexController.login', args=[huch@usi.ch, 991025, org.apache.catalina.session.StandardSessionFacade@66b756a3]}
+2023-10-13T12:59:26.353+02:00  INFO 60446 --- [http-nio-8090-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T12:59:26.749+02:00  INFO 60446 --- [http-nio-8090-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a60fc59
+2023-10-13T12:59:26.752+02:00  INFO 60446 --- [http-nio-8090-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T12:59:26.767+02:00 DEBUG 60446 --- [http-nio-8090-exec-3] p.c.mineblog.dao.UserMapper.selectUser   : ==>  Preparing: select * from tb_users where email = ? and password = ?
+2023-10-13T12:59:26.809+02:00 DEBUG 60446 --- [http-nio-8090-exec-3] p.c.mineblog.dao.UserMapper.selectUser   : ==> Parameters: huch@usi.ch(String), 03e8f68c184c26e4a2348e1bd15e6872(String)
+2023-10-13T12:59:26.832+02:00 DEBUG 60446 --- [http-nio-8090-exec-3] p.c.mineblog.dao.UserMapper.selectUser   : <==      Total: 1
+2023-10-13T12:59:26.867+02:00  INFO 60446 --- [http-nio-8090-exec-3] pri.chaofan.mineblog.aspect.LogAspect    : Result : Result(code=200, msg=null, flowcode=null, data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodWNoQHVzaS5jaCIsImV4cCI6MTY5NzIzMDc2NiwiaWF0IjoxNjk3MTk0NzY2fQ.rc6-6vUN5fRkZ9hpdj5a6-j3MoDgHj-wU7XyQNXOX5Y)
+2023-10-13T12:59:26.874+02:00  INFO 60446 --- [http-nio-8090-exec-3] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:59:28.548+02:00  INFO 60446 --- [http-nio-8090-exec-4] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.IndexController.login', args=[huch@usi.ch, 991025, org.apache.catalina.session.StandardSessionFacade@2d0950c7]}
+2023-10-13T12:59:28.552+02:00 DEBUG 60446 --- [http-nio-8090-exec-4] p.c.mineblog.dao.UserMapper.selectUser   : ==>  Preparing: select * from tb_users where email = ? and password = ?
+2023-10-13T12:59:28.553+02:00 DEBUG 60446 --- [http-nio-8090-exec-4] p.c.mineblog.dao.UserMapper.selectUser   : ==> Parameters: huch@usi.ch(String), 03e8f68c184c26e4a2348e1bd15e6872(String)
+2023-10-13T12:59:28.555+02:00 DEBUG 60446 --- [http-nio-8090-exec-4] p.c.mineblog.dao.UserMapper.selectUser   : <==      Total: 1
+2023-10-13T12:59:28.560+02:00  INFO 60446 --- [http-nio-8090-exec-4] pri.chaofan.mineblog.aspect.LogAspect    : Result : Result(code=200, msg=null, flowcode=null, data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodWNoQHVzaS5jaCIsImV4cCI6MTY5NzIzMDc2OCwiaWF0IjoxNjk3MTk0NzY4fQ.imPmBhnX2-O9DtY9F2W6KfAknA2QAWoWklGO9Q-f9Lw)
+2023-10-13T12:59:28.560+02:00  INFO 60446 --- [http-nio-8090-exec-4] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T12:59:54.069+02:00  INFO 60446 --- [http-nio-8090-exec-8] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.IndexController.login', args=[huch@usi.ch, 991025, org.apache.catalina.session.StandardSessionFacade@239d02bf]}
+2023-10-13T12:59:54.073+02:00 DEBUG 60446 --- [http-nio-8090-exec-8] p.c.mineblog.dao.UserMapper.selectUser   : ==>  Preparing: select * from tb_users where email = ? and password = ?
+2023-10-13T12:59:54.075+02:00 DEBUG 60446 --- [http-nio-8090-exec-8] p.c.mineblog.dao.UserMapper.selectUser   : ==> Parameters: huch@usi.ch(String), 03e8f68c184c26e4a2348e1bd15e6872(String)
+2023-10-13T12:59:54.081+02:00 DEBUG 60446 --- [http-nio-8090-exec-8] p.c.mineblog.dao.UserMapper.selectUser   : <==      Total: 1
+2023-10-13T12:59:54.085+02:00  INFO 60446 --- [http-nio-8090-exec-8] pri.chaofan.mineblog.aspect.LogAspect    : Result : Result(code=200, msg=null, flowcode=null, data=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodWNoQHVzaS5jaCIsImV4cCI6MTY5NzIzMDc5NCwiaWF0IjoxNjk3MTk0Nzk0fQ.eJeUjHM-EJllArlbPi5EVtT2ToCVZ55uSngHo5-ZpB0)
+2023-10-13T12:59:54.086+02:00  INFO 60446 --- [http-nio-8090-exec-8] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T13:00:27.934+02:00  INFO 60446 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.IndexController.login', args=[13123, 991025, org.apache.catalina.session.StandardSessionFacade@65f442b8]}
+2023-10-13T13:00:27.943+02:00 DEBUG 60446 --- [http-nio-8090-exec-1] p.c.mineblog.dao.UserMapper.selectUser   : ==>  Preparing: select * from tb_users where email = ? and password = ?
+2023-10-13T13:00:27.944+02:00 DEBUG 60446 --- [http-nio-8090-exec-1] p.c.mineblog.dao.UserMapper.selectUser   : ==> Parameters: 13123(String), 03e8f68c184c26e4a2348e1bd15e6872(String)
+2023-10-13T13:00:27.947+02:00 DEBUG 60446 --- [http-nio-8090-exec-1] p.c.mineblog.dao.UserMapper.selectUser   : <==      Total: 0
+2023-10-13T13:00:27.949+02:00  INFO 60446 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : Result : Result(code=401, msg=wrong email or password, flowcode=null, data=null)
+2023-10-13T13:00:27.949+02:00  INFO 60446 --- [http-nio-8090-exec-1] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T13:00:35.777+02:00  INFO 60446 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.IndexController.login', args=[13123, 991025, org.apache.catalina.session.StandardSessionFacade@649c6d29]}
+2023-10-13T13:00:35.780+02:00 DEBUG 60446 --- [http-nio-8090-exec-2] p.c.mineblog.dao.UserMapper.selectUser   : ==>  Preparing: select * from tb_users where email = ? and password = ?
+2023-10-13T13:00:35.781+02:00 DEBUG 60446 --- [http-nio-8090-exec-2] p.c.mineblog.dao.UserMapper.selectUser   : ==> Parameters: 13123(String), 03e8f68c184c26e4a2348e1bd15e6872(String)
+2023-10-13T13:00:35.782+02:00 DEBUG 60446 --- [http-nio-8090-exec-2] p.c.mineblog.dao.UserMapper.selectUser   : <==      Total: 0
+2023-10-13T13:00:35.783+02:00  INFO 60446 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : Result(code=401, msg=wrong email or password, flowcode=null, data=null)
+2023-10-13T13:00:35.783+02:00  INFO 60446 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T13:01:01.368+02:00  INFO 60446 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T13:01:01.394+02:00  INFO 60446 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-13T13:01:07.677+02:00  INFO 60467 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Starting MineblogApplication using Java 17.0.6 with PID 60467 (/Users/chaofanhu/IdeaProjects/mineblog/target/classes started by chaofanhu in /Users/chaofanhu/IdeaProjects/mineblog)
+2023-10-13T13:01:07.679+02:00 DEBUG 60467 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Running with Spring Boot v3.1.3, Spring v6.0.11
+2023-10-13T13:01:07.680+02:00  INFO 60467 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : The following 1 profile is active: "dev"
+2023-10-13T13:01:07.741+02:00  INFO 60467 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-10-13T13:01:07.741+02:00  INFO 60467 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-10-13T13:01:09.658+02:00  INFO 60467 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2023-10-13T13:01:09.666+02:00  INFO 60467 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-13T13:01:09.667+02:00  INFO 60467 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-13T13:01:09.713+02:00  INFO 60467 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-13T13:01:09.714+02:00  INFO 60467 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1972 ms
+2023-10-13T13:01:10.789+02:00  INFO 60467 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-10-13T13:01:11.158+02:00  INFO 60467 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-10-13T13:01:11.198+02:00  INFO 60467 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path ''
+2023-10-13T13:01:11.211+02:00  INFO 60467 --- [restartedMain] p.chaofan.mineblog.MineblogApplication   : Started MineblogApplication in 4.238 seconds (process running for 4.97)
+2023-10-13T13:01:14.407+02:00  INFO 60467 --- [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13T13:01:14.409+02:00  INFO 60467 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-13T13:01:14.411+02:00  INFO 60467 --- [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-13T13:01:14.467+02:00  INFO 60467 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : RequestLog{url='http://localhost:8090/admin/blogManage', ip='0:0:0:0:0:0:0:1', classMethod='pri.chaofan.mineblog.controller.BlogManageController.blogManages', args=[]}
+2023-10-13T13:01:14.481+02:00  INFO 60467 --- [http-nio-8090-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-13T13:01:14.791+02:00  INFO 60467 --- [http-nio-8090-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56b08b0d
+2023-10-13T13:01:14.793+02:00  INFO 60467 --- [http-nio-8090-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-13T13:01:14.809+02:00 DEBUG 60467 --- [http-nio-8090-exec-2] p.c.m.dao.BlogManageMapper.selectAll     : ==>  Preparing: select tb_blogs.id,title,create_time,update_time,name_category from tb_blogs left join tb_categories on tb_blogs.type_id = tb_categories.id;
+2023-10-13T13:01:14.836+02:00 DEBUG 60467 --- [http-nio-8090-exec-2] p.c.m.dao.BlogManageMapper.selectAll     : ==> Parameters: 
+2023-10-13T13:01:14.856+02:00 DEBUG 60467 --- [http-nio-8090-exec-2] p.c.m.dao.BlogManageMapper.selectAll     : <==      Total: 1
+2023-10-13T13:01:14.862+02:00  INFO 60467 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : Result : [pri.chaofan.mineblog.pojo.BlogManage@a5292b0]
+2023-10-13T13:01:14.862+02:00  INFO 60467 --- [http-nio-8090-exec-2] pri.chaofan.mineblog.aspect.LogAspect    : -----------doAfter----------
+2023-10-13T14:48:32.876+02:00  INFO 60467 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-13T14:48:32.899+02:00  INFO 60467 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

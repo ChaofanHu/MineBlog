@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+
+<mapper namespace="pri.chaofan.mineblog.dao.BlogMapper">
+    <resultMap id="blogResultMap" type="pri.chaofan.mineblog.pojo.Blog">
+        <result column="first_picture" property="firstPicture" />
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="type_id" property="categoryType"/>
+        <result column="user_id" property="userId"/>
+        <result column="comment_count" property="commentCount"/>
+    </resultMap>
+
+
+
+    <select id="selectAll" resultMap="blogResultMap">
+        select * from tb_blogs;
+    </select>
+
+    <insert id="establishBlog" useGeneratedKeys="true" keyProperty="id"  parameterType="pri.chaofan.mineblog.pojo.Blog">
+        insert into tb_blogs (title, introduction, content, first_picture, type_id, views, create_time, update_time, user_id, blog_type)
+        values (#{title}, #{introduction}, #{content}, #{firstPicture}, #{categoryType}, #{views}, #{createTime}, #{updateTime}, #{userId}, #{blogType})
+    </insert>
+
+    <select id="selectById" resultMap="blogResultMap">
+        select id,title, first_picture content from tb_blogs where id = #{id}
+    </select>
+
+
+
+</mapper>

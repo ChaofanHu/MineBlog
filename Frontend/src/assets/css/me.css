@@ -1,0 +1,141 @@
+body{
+    background: url("../pictures/background.jpeg") ;
+    background-size: 100% 200% ;
+}
+
+.m-aligncenter { 
+    clear: both; 
+    display: block; 
+    margin:auto; 
+} 
+
+
+.m-container-small{
+    max-width: 60em !important;
+    margin: auto !important;
+}
+.m-container{
+    max-width: 72em !important;
+    margin: auto !important;
+}
+
+.m-padding-tb-mini{
+    padding-top: 0.01em !important;;
+    padding-bottom: 0.01em !important;
+}
+.m-padding-tb-small{
+    padding-top: 0.5em !important;;
+    padding-bottom: 0.5em !important;
+}
+.m-padding-tb{
+    padding-top: 1em !important;;
+    padding-bottom: 1em !important;
+}
+.m-padding-tb-larger{
+    padding-top: 2em !important;;
+    padding-bottom: 2em !important;
+}
+.m-padding-tb-big{
+    padding-top: 3em !important;;
+    padding-bottom: 3em !important;
+}
+.m-padding-tb-huge{
+    padding-top: 4em !important;;
+    padding-bottom: 4em !important;
+}
+.m-padding-tb-massive{
+    padding-top: 5em !important;;
+    padding-bottom: 5em !important;
+}
+.m-padding-lr{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+
+
+/* display */
+.m-inline-block{
+    display: inline-block !important;
+}
+
+.m-container{
+    max-width: 72em !important;
+    margin: auto !important;
+}
+
+
+/* text  */
+.m-header{
+    text-align: left;
+    text-indent: 0.5em;
+    font-weight: 300 !important;
+}
+.m-text-indent{
+    text-indent: 1em;
+}
+.m-text{
+    text-indent: 2em;
+    font-weight: 300 !important;
+    letter-spacing: 1.2px !important;
+    line-height: 1.5 !important;
+    color:#8e8e8e;
+    text-align: justify;
+}
+
+.m-text-thin{
+    font-weight: 300 !important;
+}
+
+.m-text-medium{
+    font-weight: 600 !important;
+}
+
+.m-text-spaced{
+    letter-spacing: 1x !important;
+}
+
+.m-text-lined{
+    line-height: 1.8 !important;
+}
+
+.m-opacity-mini{
+    opacity: 0.8 !important;
+}
+
+
+.m-margin-tb-tiny{
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+.m-margin-top{
+    margin-top: 2em !important;
+}
+
+
+.m-right-top{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.m-mobile-show{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .m-mobile-hide{
+        display: none !important;
+    }
+    .m-mobile-show{
+        display: block !important;
+    }
+}
+
+/* for tags and catogory */
+.m-text-tagsAndCatagory{
+    text-indent: 2em;
+    letter-spacing: 1.2px !important;
+    line-height: 1.5 !important;
+    color:#8e8e8e;
+    text-align:left;
+}

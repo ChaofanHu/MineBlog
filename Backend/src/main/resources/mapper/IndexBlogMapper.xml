@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pri.chaofan.mineblog.dao.IndexBlogMapper">
+    <resultMap id="blogResultMap" type="pri.chaofan.mineblog.pojo.IndexBlog">
+        <result column="first_picture" property="firstPicture" />
+        <result column="create_time" property="createdTime"/>
+        <result column="update_time" property="updatedTime"/>
+        <result column="nickname" property="username"/>
+        <result column="blog_type" property="blogType"/>
+        <result column="icon_url" property="iconUrl"/>
+        <result column="name" property="blogType"/>
+    </resultMap>
+
+    <select id="selectAllIndexBlog" resultMap="blogResultMap">
+        select tb_blogs.id, title, introduction, first_picture, tb_blogs.create_time, tb_blogs.update_time, nickname, views, blog_type, icon_url from tb_blogs left join tb_users on tb_blogs.user_id = tb_users.id;
+    </select>
+
+    <select id="selectById" resultMap="blogResultMap">
+        select tb_blogs.id, title, introduction, first_picture, tb_blogs.create_time, tb_blogs.update_time, nickname, views, tb_blog_type.name, icon_url
+        from tb_blogs
+        left join tb_users on tb_blogs.user_id = tb_users.id
+        left join tb_blog_type on tb_blogs.blog_type = tb_blog_type.id
+        where tb_blogs.id = #{id};
+    </select>
+
+
+</mapper>
