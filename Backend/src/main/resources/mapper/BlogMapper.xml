@@ -25,7 +25,7 @@
     </insert>
 
     <select id="selectById" resultMap="blogResultMap">
-        select id,title, first_picture content from tb_blogs where id = #{id}
+        select id,title, first_picture, content from tb_blogs where id = #{id}
     </select>
 
 

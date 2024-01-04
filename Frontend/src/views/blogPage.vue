@@ -103,6 +103,7 @@ export default {
                     id : _this.id
                 }
             }).then(function(resp){
+                console.log(resp.data);
                 _this.blog = resp.data;
             })
 
