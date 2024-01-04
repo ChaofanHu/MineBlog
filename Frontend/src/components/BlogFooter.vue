@@ -15,8 +15,7 @@
                         <h4 class="ui inverted header">New Blog</h4>
                         <div class="ui inverted link list">
                             <a href="" class="item">User Blog</a>
-                            <a href="" class="item">User Blog</a>
-                            <a href="" class="item">User Blog</a>
+                 
                         </div>
                     </div>
                     <div class="three wide column">
@@ -24,14 +23,13 @@
                         <h4 class="ui inverted header">New Blog</h4>
                         <div class="ui inverted link list">
                             <a href="" class="item">User Blog</a>
-                            <a href="" class="item">User Blog</a>
-                            <a href="" class="item">User Blog</a>
+
                         </div>
                     </div>
                     <div class="seven wide column">
                         <p></p>
-                        <h4 class="ui inverted header" >Hello World</h4>
-                        <p>hellooooooooooo</p>
+                        <h4 class="ui inverted header" >Contact Me</h4>
+                        <a href="mailto:huch@usi.ch">huch@usi.ch</a>
                     </div>
                 </div>
             </div>

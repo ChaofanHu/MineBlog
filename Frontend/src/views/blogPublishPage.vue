@@ -107,7 +107,7 @@ import BlogHeader from "../components/blogHeader.vue"
 import SecondHeader from "../components/SecondHeader.vue"
 import { RouterLink } from "vue-router"
 import { mavonEditor } from 'mavon-editor'
-import '/Users/chaofanhu/Frontend/mineblog/node_modules/mavon-editor/dist/css/index.css'
+// import '/Users/chaofanhu/Frontend/mineblog/node_modules/mavon-editor/dist/css/index.css'
 
 export default{
     components:{

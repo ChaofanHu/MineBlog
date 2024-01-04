@@ -34,7 +34,7 @@
 
                         </div>
                         <div class="right aligned column">
-                                Total <h3 class="ui orange header m-inline-block" >  14  </h3> Blogs
+                                Total <h3 class="ui orange header m-inline-block" >  {{ num }}  </h3> Blogs
                         </div>
                     </div>
                 </div>
@@ -42,16 +42,18 @@
                 <div class="ui attached segment">
              
                         <div class="ui segment">
-                            <a href="" class="ui basic left pointing label m-margin-tb-tiny">141231231231</a>
-                            <a href="" class="ui basic left pointing label m-margin-tb-tiny">142123131</a>
-                            <a href="" class="ui basic left pointing label m-margin-tb-tiny">1</a>
+                            <div class="ui labeled button" v-for="tag in tags" :key="tag.id">
+                                <h class="ui basic teal button m-margin-tiny">
+                                    {{ tag.name }}
+                                    </h>
+                                </div>
                         </div>
                     
                 </div>
 
                 
                 <!-- blog -->
-                <div class="ui segment " v-for="blog in blogs" :key="blog.id">
+                <div class="ui segment " v-for="blog in dataShow" :key="blog.id">
                     <div class="ui attached segment m-container">
                         <div class="ui padded vertical segment">
                             <div class="ui mobile reversed stackable grid">
@@ -121,29 +123,75 @@
     </div>
 </template>
 <script>
-import BlogHeader from "../components/blogHeader.vue";
-import BLogFooter from "../components/BlogFooter.vue"
-export default{
-    name: 'homePage',
-    components:{
-        BlogHeader,
-        BLogFooter
+  import BlogHeader from "../components/blogHeader.vue";
+  import BLogFooter from "../components/BlogFooter.vue";
+  
+  export default {
+    components: {
+      BlogHeader,
+      BLogFooter
     },
-        data(){
-            return {
-                blogs: [
-                    {id:1, 
-                    title:"Enjoy your life", 
-                    introduction:"By wisdom I mean truth, insight, ideas. A sentence functioning as an aphorism.", 
-                    icon:"https://images.unsplash.com/photo-1682695798522-6e208131916d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80", 
-                    name:"Tony", 
-                    date:"2022-02-02", 
-                    view:"666", 
-                    tag:"Life", 
-                    picture:"https://images.unsplash.com/photo-1682695798522-6e208131916d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"},
-
-                ]
-            }
+    data () {
+        return{
+            //number of the blogs
+            num: 10,
+            //total categories
+            tags: [],
+            // 后台传来的数据源
+            data: [],
+            // 所有页面的数据
+            totalPage: [],
+            // 每页显示数量
+            pageSize: 5,
+            // 共几页
+            pageNum: 1,
+            // 当前显示的数据
+            dataShow: "",
+            // 默认当前显示第一页
+            currentPage: 0
         }
-}
-</script>
+    },
+    methods:{
+        dividePage(){
+            this.pageNum = Math.ceil(this.data.length / this.pageSize) || 1;//计算有多少页数据，默认为1
+            // 循环页面
+            for (let i = 0; i < this.pageNum; i++) {
+            // 每一页都是一个数组 形如 [['第一页的数据'],['第二页的数据'],['第三页数据']]
+            // 根据每页显示数量 将后台的数据分割到 每一页,假设pageSize为2， 则第一页是1-2条，即slice(0,2)，第二页是3-4条，即slice(3,4)以此类推
+            this.totalPage[i] = this.data.slice(this.pageSize * i, this.pageSize * (i + 1))
+            }
+            // 获取到数据后默认显示第一页内容
+            this.dataShow = this.totalPage[this.currentPage];
+        },
+        // 下一页
+        nextPage() {
+        if (this.currentPage === this.pageNum - 1) return ;
+            this.dataShow = this.totalPage[++this.currentPage];
+        },
+        // 上一页
+        prePage() {
+            if (this.currentPage === 0) return ;
+              this.dataShow = this.totalPage[--this.currentPage];
+        },
+        selectAll(){
+            var _this = this;
+            this.axios.get("http://localhost:8090/getAllBlogs")
+            .then(function(resp){
+                _this.data = resp.data;
+                // alert(resp.data)
+                _this.dividePage();
+                _this.num = resp.data.length;
+            })
+            this.axios.get("http://localhost:8090/getAllTags")
+            .then(function (resp) {
+                console.log(resp.data)
+                _this.tags = resp.data;
+            })
+        }
+    },
+    created: function(){
+        this.selectAll();
+    }
+  }
+  </script>
+  

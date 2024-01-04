@@ -16,7 +16,7 @@
                                 <h3 class="ui black header">Blog</h3>
                             </div>
                             <div class="right aligned column">
-                                Total <h3 class="ui orange header m-inline-block" >  14  </h3> Blogs
+                                Total <h3 class="ui orange header m-inline-block" >  {{ num }}  </h3> Blogs
                             </div>
                         </div>
                     </div>
@@ -93,25 +93,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ui segment">
-                            <div class="ui fluid vertical menu">
-                            <a href="" class="item">
-                                Study
+                        <div class="ui segment" >
+                            <div class="ui fluid vertical menu" >
+                            <a href="" class="item" v-for="catagory in categories" :key="catagory.id">
+                                {{ catagory.name }}
                                 <div class="ui label">13</div>
                             </a>
-                            <a href="" class="item">
-                                Video
-                                <div class="ui label">13</div>
-                            </a>
-                            <a href="" class="item">
-                                Github
-                                <div class="ui label">13</div>
-                            </a>
-                            <a href="" class="item">
-                                Records
-                                <div class="ui label">13</div>
-                            </a>
-                
                         </div>
                         </div>
                     </div>
@@ -128,9 +115,7 @@
                             </div>
                         </div>
                         <div class="ui segment">
-                            <a href="" class="ui basic left pointing label m-margin-tb-tiny">141231231231</a>
-                            <a href="" class="ui basic left pointing label m-margin-tb-tiny">142123131</a>
-                            <a href="" class="ui basic left pointing label m-margin-tb-tiny">1</a>
+                            <a href="" class="ui basic left pointing label m-margin-tb-tiny" v-for="tag in tags" :key="tag.id">{{ tag.name }}</a>
                         </div>
                     </div>
                     <!-- new element -->
@@ -146,13 +131,13 @@
                             </div>
                             <div class="ui segment">
                                 <div class="ui fluid vertical menu">
-                                    <a href="" class="item">
+                                    <a href="https://github.com/ChaofanHu" class="item">
                                         Github
                                         <i class="github icon"></i>
                                         
                                         <!-- icon -->
                                     </a>
-                                    <a href="" class="item">
+                                    <a href="www.linkedin.com/in/chaofan-hu" class="item">
                                         <i class="linkedin icon"></i>Linkedin
                                         <!-- icon -->
                                     </a>
@@ -180,8 +165,6 @@
 import BlogHeader from "../components/blogHeader.vue";
 import BLogFooter from "../components/BlogFooter.vue";
 
-
-
 export default{
     name: 'homePage',
     components:{
@@ -190,6 +173,12 @@ export default{
     },
     data () {
         return{
+            //total categories
+            categories:[],
+            //total tags
+            tags:[],
+            //the number of blogs
+            num: 10,
             // 后台传来的数据源
             data: [],
             // 所有页面的数据
@@ -233,6 +222,17 @@ export default{
                 _this.data = resp.data;
                 // alert(resp.data)
                 _this.dividePage();
+                _this.num = resp.data.length;
+            });
+            this.axios.get("http://localhost:8090/getAllCategory")
+            .then(function (resp) {
+                console.log(resp.data)
+                _this.categories = resp.data;
+            });
+            this.axios.get("http://localhost:8090/getAllTags")
+            .then(function (resp) {
+                console.log(resp.data)
+                _this.tags = resp.data;
             })
         }
     },
