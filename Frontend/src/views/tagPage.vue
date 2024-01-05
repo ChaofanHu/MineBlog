@@ -29,7 +29,7 @@
                     <div class="ui middle aligned two column grid">
                         <div class="column">
                             <h3 class="ui teal header">
-                                Catagory
+                                Tags
                             </h3>
 
                         </div>
@@ -58,7 +58,7 @@
                         <div class="ui padded vertical segment">
                             <div class="ui mobile reversed stackable grid">
                                 <div class="eleven wide column">
-                                    <h3 class="ui headert"><RouterLink to="/homePage/blogPage">{{blog.title}}</RouterLink></h3>
+                                    <RouterLink :to="'/BlogPage/' + blog.id" ><h3 class="ui headert"> {{ blog.title }}</h3></RouterLink>
                                     <sui-divider />
                                         <p class="m-text"> {{ blog.introduction }} </p>
                                         
@@ -106,12 +106,12 @@
 
                 <div class="ui segment">
                     <div class="ui bottom attached segment">
-                        <div class="ui  middle aligned two column grid">
+                        <div class="ui middle aligned two column grid">
                             <div class="column">
-                                <a href="" class="ui mini black basic button">Last Page</a>
+                                <a href="#" @click="prePage" class="ui mini black basic button">Last Page</a>
                             </div>
                             <div class="right aligned column">
-                                <a href="" class="ui mini black basic button">Next Page</a>
+                                <a href="#" @click="nextPage" class="ui mini black basic button">Next Page</a>
                             </div>
                         </div>
                     </div>
@@ -125,6 +125,7 @@
 <script>
   import BlogHeader from "../components/blogHeader.vue";
   import BLogFooter from "../components/BlogFooter.vue";
+  
   
   export default {
     components: {

@@ -33,7 +33,7 @@
                 <div class="ui mobile reversed stackable grid">
                   <div class="eleven wide column">
                     <h3 class="ui header">
-                      <router-link :to="`/homePage/blogPage/${blog.id}`">{{ blog.title }}</router-link>
+                      <RouterLink :to="'/BlogPage/' + blog.id" > {{ blog.title }}</RouterLink>
                     </h3>
                     <sui-divider />
                     <p class="m-text">{{ blog.introduction }}</p>
@@ -74,14 +74,14 @@
           <div class="ui segment">
             <div class="ui bottom attached segment">
               <div class="ui middle aligned two column grid">
-                <div class="column">
-                  <router-link to="/previousPage" class="ui mini black basic button">Last Page</router-link>
-                </div>
-                <div class="right aligned column">
-                  <router-link to="/nextPage" class="ui mini black basic button">Next Page</router-link>
-                </div>
+                  <div class="column">
+                      <a href="#" @click="prePage" class="ui mini black basic button">Last Page</a>
+                  </div>
+                  <div class="right aligned column">
+                      <a href="#" @click="nextPage" class="ui mini black basic button">Next Page</a>
+                  </div>
               </div>
-            </div>
+          </div>
           </div>
         </div>
       </div>

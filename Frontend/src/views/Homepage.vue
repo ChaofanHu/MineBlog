@@ -69,12 +69,12 @@
 
                     <!-- footer  -->
                     <div class="ui bottom attached segment">
-                        <div class="ui  middle aligned two column grid">
-                            <div class="column" @click="prePage">
-                                <a href=""  class="ui mini black basic button" >Last Page</a>
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a href="#" @click="prePage" class="ui mini black basic button">Last Page</a>
                             </div>
-                            <div class="right aligned column" @click="nextPage">
-                                <a href="" class="ui mini black basic button" >Next Page</a>
+                            <div class="right aligned column">
+                                <a href="#" @click="nextPage" class="ui mini black basic button">Next Page</a>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                     <i class="idea icon"></i>Catagory
                                 </div>
                                 <div class="right aligned column">
-                                    <a href="" class="">More <i class="angle double right icon"></i></a>
+                                    <RouterLink to="/CatagoryPage">More <i class="angle double right icon"></i></RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                     <i class="idea icon"></i>Tags
                                 </div>
                                 <div class="right aligned column">
-                                    <a href="" class="">More <i class="angle double right icon"></i></a>
+                                    <RouterLink to="/TagPage">More <i class="angle double right icon"></i></RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -164,13 +164,15 @@
 <script>
 import BlogHeader from "../components/blogHeader.vue";
 import BLogFooter from "../components/BlogFooter.vue";
+import { RouterLink } from "vue-router";
 
 export default{
     name: 'homePage',
     components:{
-        BlogHeader,
-        BLogFooter
-    },
+    BlogHeader,
+    BLogFooter,
+    RouterLink
+},
     data () {
         return{
             //total categories
@@ -184,7 +186,7 @@ export default{
             // 所有页面的数据
             totalPage: [],
             // 每页显示数量
-            pageSize: 5,
+            pageSize: 6,
             // 共几页
             pageNum: 1,
             // 当前显示的数据
@@ -226,12 +228,11 @@ export default{
             });
             this.axios.get("http://localhost:8090/getAllCategory")
             .then(function (resp) {
-                console.log(resp.data)
                 _this.categories = resp.data;
             });
             this.axios.get("http://localhost:8090/getAllTags")
             .then(function (resp) {
-                console.log(resp.data)
+
                 _this.tags = resp.data;
             })
         }
